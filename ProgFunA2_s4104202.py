@@ -956,11 +956,11 @@ class Operations:
             return -1
         # 2 beds needed if 3/4 people extra
         elif diff>2:
-            print("2 Extra beds required")
+            print("2 Extra beds required per day")
             return 2
         # Atleast 1 bed needed if 1/2 people extra
         elif diff>0:
-            print("Atleast 1 extra bed required")
+            print("Atleast 1 extra bed required per day")
             return 1
         # No additional beds req
         else:
@@ -1102,7 +1102,7 @@ class Operations:
                     if choice == 'y':
                         print("Redeemed")
                         points_used = discount/guest.get_redeem_rate()
-                        if not round(points_used).is_integer():
+                        if not points_used.is_integer():
                             points_used = int(points_used)+1
                         # Reduce the redeemed points from the user
                         self.save_reward(guest_name,-points_used)
